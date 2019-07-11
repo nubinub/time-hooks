@@ -3,7 +3,7 @@ import { useTimer, useCountdownTimer }  from 'time-hooks';
 
 const App = () => {
   const [timer, startTimer, stopTimer, clearTimer ] = useTimer(100);
-  const [countdown, startCountdown, stopCountdown, clearCountdown] = useCountdownTimer(15 * 60 * 1000, 100);
+  const [countdown, startCountdown, stopCountdown, clearCountdown, addToCountdown] = useCountdownTimer(15 * 60 * 1000, 100);
 
   return (
     <div>
@@ -30,6 +30,9 @@ const App = () => {
         </button>
         <button onClick={() => clearCountdown()}>
           Clear
+        </button>
+        <button onClick={() => addToCountdown(2000)}>
+          Add
         </button>
         {countdown / 1000} s
       </div>

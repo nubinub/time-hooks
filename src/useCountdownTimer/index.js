@@ -1,4 +1,4 @@
-import {useState, useCallback} from 'react';
+import {useState, useCallback, useEffect} from 'react';
 import useInterval from '../useInterval';
 
 const useCountdownTimer = (total, step = 1000) => {
@@ -16,7 +16,15 @@ const useCountdownTimer = (total, step = 1000) => {
     setTimer(total);
   }, [stop]);
 
-  return [timer, startTimer, stop, clear];
+  const add = useCallback((inc) => {
+    setTimer((t) => t + inc);
+  }, []);
+
+  useEffect(() => {
+    clear();
+  }, [total, step]);
+
+  return [timer, startTimer, stop, clear, add];
 };
 
 export default useCountdownTimer;
