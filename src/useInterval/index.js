@@ -12,8 +12,9 @@ const useInterval = () => {
   }, [intervalId]);
 
   const stop = useCallback(() => {
+    clearInterval(intervalId);
     setIntervalId();
-  }, []);
+  }, [intervalId]);
 
   const start = useCallback((fn, step) => {
     if (!intervalId) {
