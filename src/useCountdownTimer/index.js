@@ -7,7 +7,7 @@ const useCountdownTimer = (total, step = 1000) => {
 
   const startTimer = useCallback(() => {
     startInterval(() => {
-      setTimer((t) => t - step);
+      setTimer((t) => Math.max(t - step, 0));
     }, step)
   }, [startInterval]);
 
