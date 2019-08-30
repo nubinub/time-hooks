@@ -1,6 +1,6 @@
 {
   "name": "time-hooks",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "This library provides hooks to efficiently manage timer and other related time logic",
   "author": "nubinub",
   "license": "MIT",
